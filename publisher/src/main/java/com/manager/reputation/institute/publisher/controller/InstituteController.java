@@ -3,6 +3,7 @@ package com.manager.reputation.institute.publisher.controller;
 import com.manager.reputation.institute.publisher.dao.Institute;
 import com.manager.reputation.institute.publisher.services.InstituteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,13 +16,11 @@ public class InstituteController {
     InstituteService instituteService;
 
     @RequestMapping(method = RequestMethod.POST)
-    @ResponseBody
     public Institute add(@RequestBody Institute institute){
         return instituteService.save(institute);
 
     }
     @RequestMapping(method = RequestMethod.GET)
-    @ResponseBody
     public List<Institute> get(){
         return instituteService.get();
 
@@ -30,13 +29,13 @@ public class InstituteController {
     public Institute get(@PathVariable String id){
         return instituteService.get(id);
     }
+
     @RequestMapping(method = RequestMethod.PUT)
-    public Institute update(Institute institute){
+    public Institute update(@RequestBody Institute institute){
         return instituteService.save(institute);
 
     }
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    @ResponseBody
     public void delete (@PathVariable String id){
         instituteService.delete(id);
     }

@@ -23,6 +23,13 @@ public class Institute {
     @Embedded
     private Address address;
 
+    private String foundedBy;
+
+    @Embedded
+    private ContactDetails contactDetails;
+
+    private InstituteType instituteType;
+
     private String foundedOn;
 
     public Institute(String id, String name, String licenceNumber, boolean govtRecognized, Address address, String foundedOn) {
@@ -92,5 +99,29 @@ public class Institute {
 
     public void setFoundedOn(String foundedOn) {
         this.foundedOn = foundedOn;
+    }
+
+    public String getFoundedBy() {
+        return foundedBy;
+    }
+
+    public void setFoundedBy(String foundedBy) {
+        this.foundedBy = foundedBy;
+    }
+
+    public ContactDetails getContactDetails() {
+        return contactDetails;
+    }
+
+    public void setContactDetails(ContactDetails contactDetails) {
+        this.contactDetails = contactDetails;
+    }
+
+    public InstituteType getInstituteType() {
+        return instituteType;
+    }
+
+    public void setInstituteType(InstituteType instituteType) {
+        this.instituteType = instituteType;
     }
 }
